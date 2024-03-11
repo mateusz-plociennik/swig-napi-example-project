@@ -69,6 +69,7 @@ jobs:
         curl -LO "${{ env.GLIB_ZIP }}"
         7z x glib_2.28.8-1_win32.zip -oC:\MinGW\bin libglib-2.0-0.dll
         echo "C:\MinGW\bin" >> $GITHUB_PATH
+        dir /s C:\MinGW
 
     - name: Download the SWIG-generated wrappers
       uses: actions/download-artifact@v4
