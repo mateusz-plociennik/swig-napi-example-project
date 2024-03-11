@@ -69,8 +69,7 @@ jobs:
         curl -LO "${{ env.GLIB_ZIP }}"
         7z x glib_2.28.8-1_win32.zip
         echo "${{ github.workspace }}\bin" >> $GITHUB_PATH
-        bin\pkg-config.exe
-        Get-ChildItem -Recurse
+        bin\pkg-config.exe --help
 
     - name: Download the SWIG-generated wrappers
       uses: actions/download-artifact@v4
@@ -80,6 +79,8 @@ jobs:
         
     - name: Install dependencies
       run: |
+        bin\pkg-config.exe --help
+        pkg-config.exe --help
         Get-ChildItem env:path | Format-List *
         npm install --ignore-scripts
         npx xpm install
