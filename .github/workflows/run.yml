@@ -69,7 +69,7 @@ jobs:
         curl -LO "${{ env.GLIB_ZIP }}"
         7z x glib_2.28.8-1_win32.zip
         echo "${{ github.workspace }}\bin" >> $GITHUB_PATH
-        dir /s
+        Get-ChildItem -Recurse
 
     - name: Download the SWIG-generated wrappers
       uses: actions/download-artifact@v4
