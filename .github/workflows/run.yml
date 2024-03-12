@@ -81,7 +81,6 @@ jobs:
     - name: Install dependencies
       run: |
         echo $env:PATH
-        \pkg-config\bin\pkg-config.exe --help
         pkg-config.exe -help
         npm install --ignore-scripts
         npx xpm install
